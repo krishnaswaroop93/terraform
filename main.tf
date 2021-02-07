@@ -4,7 +4,12 @@ provider "aws" {
     #secret_key = "${var.aws_secret_key}"
     region = "${var.aws_region}"
 }
-
+terraform {
+    backend "s3"
+    bucket = "terraformdevops123"
+    key    =  "jenkinsintegration.tfstate"
+    region = "us-east-2"
+}
 
 
 
